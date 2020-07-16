@@ -22,7 +22,6 @@ export const NumberFields = () => (
   <MultiFieldsInput
     label="Sort Code"
     name="sortCode"
-    //@ts-ignore
     inputs={inputs}
     value="202020"
     onBlur={data => console.log(data)}
@@ -53,7 +52,6 @@ export const TextFields = () => (
   <MultiFieldsInput
     label="Voucher Code"
     name="voucherCode"
-    //@ts-ignore
     inputs={textInputs}
     value="aassddff"
     autoFocus={false}
@@ -64,14 +62,12 @@ export const TextFields = () => (
 
 export const WithoutLabel = () => (<MultiFieldsInput
   name="sortCode"
-  //@ts-ignore
   inputs={inputs}
   onBlur={data => console.log(data)}
 />)
 
 export const WithInvalidInput = () => (<MultiFieldsInput
   name="sortCode"
-  //@ts-ignore
   inputs={inputs}
   value="202020"
   onBlur={data => console.log(data)}

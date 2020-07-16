@@ -1,6 +1,10 @@
-// TODO: type that
-// @ts-ignore
-export const formatFields = (value, name, inputs) => {
+import { FIELDS, INPUT } from '../types'
+
+export const formatFields = (
+  value: string,
+  name: string,
+  inputs: INPUT[]
+): Record<string, unknown> => {
   const stateValues = {}
   let previousEnd = 0
   for (let i = 0; i < inputs.length; i++) {
@@ -13,12 +17,9 @@ export const formatFields = (value, name, inputs) => {
 
   return stateValues
 }
-// @ts-ignore
-export const getValue = (fields) => {
-    // TODO: reduce instead of map
-  let value = ''
-  Object.keys(fields).map(field => {
-    value += fields[field]
-  })
-  return value
-}
+
+export const getValue = (fields: FIELDS | Record<string, string>): string =>
+  Object.values(fields).reduce(
+    (finalValue, fieldValue) => finalValue + fieldValue,
+    ''
+  )

@@ -5,7 +5,7 @@ import React, {
   SyntheticEvent,
 } from 'react'
 import cn from 'classnames'
-import { Props } from './types'
+import { Props } from '../types'
 import { formatFields, getValue } from '../utils'
 
 const MultiFieldsInput: FunctionComponent<Props> = ({
@@ -21,21 +21,18 @@ const MultiFieldsInput: FunctionComponent<Props> = ({
   const [fieldsValues, setFieldsValues] = useState({})
 
   const handleBlur = (e: SyntheticEvent) => {
-    // @ts-ignore
-    const { name: fieldName, value } = e.target
+    const { name: fieldName, value } = e.target as HTMLInputElement
     const updatedState = {
       ...fieldsValues,
       [fieldName]: value,
     }
     setFieldsValues(updatedState)
     const finalValue = getValue(updatedState)
-    // @ts-ignore
     onBlur({ name, value: finalValue })
   }
 
   const handleChange = (e: SyntheticEvent) => {
-    // @ts-ignore
-    const { name: fieldName, value } = e.target
+    const { name: fieldName, value } = e.target as HTMLInputElement
 
     setFieldsValues({
       ...fieldsValues,
@@ -67,7 +64,6 @@ const MultiFieldsInput: FunctionComponent<Props> = ({
       const value = getValue(fieldsValues)
       console.log(value)
       onChange({
-        // @ts-ignore
         name,
         value,
       })
