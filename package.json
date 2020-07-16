@@ -77,7 +77,8 @@
   "lint-staged": {
     "src/**/*.{ts,tsx,js,json}": [
       "yarn lint:fix",
-      "yarn prettify"
+      "yarn prettify",
+      "git add ."
     ]
   },
   "husky": {
