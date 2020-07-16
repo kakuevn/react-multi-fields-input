@@ -54,7 +54,7 @@ See more live examples on the [website](https://react-multi-fields-input.sniki.d
 | onChange    | no          | `function`        | `undefined`    |
 | isValid     | no          | `function`        | `true`         |
 | value       | no          | `string`          | ` '' `         |
-| autoFocus   | no          | `function`        | `true`         |
+| autoFocus   | no          | `boolean`         | `true`         |
 
 
 `Input[]` is an array of objects with following properties

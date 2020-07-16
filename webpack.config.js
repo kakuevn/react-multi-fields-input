@@ -60,10 +60,6 @@ module.exports = {
           configFile: path.resolve(__dirname, '.babelrc.json'),
         },
       },
-      {
-        test: /\.scss$/,
-        use: ['style-loader', 'css-loader', 'sass-loader'],
-      },
     ],
   },
   plugins: [

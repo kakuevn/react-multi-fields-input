@@ -18,7 +18,9 @@ const MultiFieldsInput: FunctionComponent<Props> = ({
   onChange,
   value = '',
 }: Props) => {
-  const [fieldsValues, setFieldsValues] = useState({})
+  const [fieldsValues, setFieldsValues] = useState(
+    formatFields(value, name, inputs)
+  )
 
   const handleBlur = (e: SyntheticEvent) => {
     const { name: fieldName, value } = e.target as HTMLInputElement
@@ -27,7 +29,7 @@ const MultiFieldsInput: FunctionComponent<Props> = ({
       [fieldName]: value,
     }
     setFieldsValues(updatedState)
-    const finalValue = getValue(updatedState)
+    const finalValue = getValue(updatedState as any)
     onBlur({ name, value: finalValue })
   }
 
@@ -53,15 +55,9 @@ const MultiFieldsInput: FunctionComponent<Props> = ({
     }
   }
 
-  // Recalculate if new value is passed from the parent
-  useEffect(() => {
-    const values = formatFields(value, name, inputs)
-    setFieldsValues(values)
-  }, [value])
-
   useEffect(() => {
     if (onChange) {
-      const value = getValue(fieldsValues)
+      const value = getValue(fieldsValues as any)
       console.log(value)
       onChange({
         name,
@@ -82,7 +78,8 @@ const MultiFieldsInput: FunctionComponent<Props> = ({
           <input
             key={`${name}-${index}`}
             name={`${name}${index}`}
-            value={fieldsValues[`${name}${index}`]}
+            data-testid={`${name}${index}`}
+            value={fieldsValues[`${name}${index}`] as string}
             className={cn([
               `rmfi-input rmfi-input-${index}`,
               {

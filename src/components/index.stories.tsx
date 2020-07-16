@@ -60,17 +60,21 @@ export const TextFields = () => (
   />
 )
 
-export const WithoutLabel = () => (<MultiFieldsInput
-  name="sortCode"
-  inputs={inputs}
-  onBlur={data => console.log(data)}
-/>)
+export const WithoutLabel = () => (
+  <MultiFieldsInput
+    name="sortCode"
+    inputs={inputs}
+    onBlur={data => console.log(data)}
+  />
+)
 
-export const WithInvalidInput = () => (<MultiFieldsInput
-  name="sortCode"
-  inputs={inputs}
-  value="202020"
-  onBlur={data => console.log(data)}
-  onChange={data => console.log(data)}
-  error="Input is invalid"
-/>)
+export const WithInvalidInput = () => (
+  <MultiFieldsInput
+    name="sortCode"
+    inputs={inputs}
+    value="202020"
+    onBlur={data => console.log(data)}
+    onChange={data => console.log(data)}
+    error="Input is invalid"
+  />
+)

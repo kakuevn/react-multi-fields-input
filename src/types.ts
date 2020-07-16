@@ -1,4 +1,3 @@
-
 export type INPUT = {
   maxLength: number
   placeholder: string
