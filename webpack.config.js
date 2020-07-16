@@ -1,15 +1,15 @@
-const path = require('path');
-const webpack = require('webpack');
-const lintFormatter = require('eslint-formatter-friendly');
+const path = require('path')
+const webpack = require('webpack')
+const lintFormatter = require('eslint-formatter-friendly')
 
 module.exports = {
-  entry: './src/components/index.tsx',
+  entry: path.resolve(__dirname, 'src/components/index.tsx'),
   output: {
     filename: 'index.js',
     path: path.resolve(__dirname, 'dist'),
     publicPath: '/dist',
     library: '',
-    libraryTarget: 'commonjs2'
+    libraryTarget: 'commonjs2',
   },
 
   devtool: 'cheap-source-map',
@@ -17,12 +17,12 @@ module.exports = {
   stats: 'errors-only',
 
   node: {
-    fs: 'empty'
+    fs: 'empty',
   },
 
   resolve: {
-    modules: [path.resolve(__dirname, './src'), 'node_modules'],
-    extensions: ['.ts', '.tsx', '.js', '.json']
+    modules: [path.resolve(__dirname, 'src'), 'node_modules'],
+    extensions: ['.ts', '.tsx', '.js', '.json'],
   },
 
   module: {
@@ -36,34 +36,40 @@ module.exports = {
           configFile: './.eslintrc.json',
           formatter: lintFormatter,
           failOnWarning: false,
-          failOnError: false
-        }
+          failOnError: false,
+        },
       },
-      { enforce: 'pre', test: /\.ts$/, loader: 'source-map-loader' },
+      { enforce: 'pre', test: /\.tsx?$/, loader: 'source-map-loader' },
       {
         test: /\.(eot|svg|ttf|woff|woff2)$/,
-        loader: 'file-loader?name=app/fonts/[name].[ext]'
+        loader: 'file-loader?name=app/fonts/[name].[ext]',
       },
       {
         test: /\.(png|jpg|gif)$/,
         use: [
           {
             loader: 'file-loader',
-            options: {}
-          }
-        ]
+            options: {},
+          },
+        ],
       },
-      { test: /\.tsx?$/, loader: 'awesome-typescript-loader' },
+      {
+        test: /\.(ts|tsx)$/,
+        loader: 'babel-loader',
+        options: {
+          configFile: path.resolve(__dirname, '.babelrc.json'),
+        },
+      },
       {
         test: /\.scss$/,
-        use: ['style-loader', 'css-loader', 'sass-loader']
-      }
-    ]
+        use: ['style-loader', 'css-loader', 'sass-loader'],
+      },
+    ],
   },
   plugins: [
     new webpack.HotModuleReplacementPlugin(),
     new webpack.NamedModulesPlugin(),
-    new webpack.EnvironmentPlugin(['NODE_ENV'])
+    new webpack.EnvironmentPlugin(['NODE_ENV']),
   ],
 
   externals: {
@@ -71,17 +77,17 @@ module.exports = {
       commonjs: 'react',
       commonjs2: 'react',
       amd: 'React',
-      root: 'React'
+      root: 'React',
     },
     'react-dom': {
       commonjs: 'react-dom',
       commonjs2: 'react-dom',
       amd: 'ReactDOM',
-      root: 'ReactDOM'
+      root: 'ReactDOM',
     },
     'styled-components': {
       commonjs: 'styled-components',
-      commonjs2: 'styled-components'
-    }
-  }
-};
+      commonjs2: 'styled-components',
+    },
+  },
+}

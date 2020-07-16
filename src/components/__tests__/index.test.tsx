@@ -2,8 +2,8 @@ import * as React from 'react';
 import { shallow, mount } from 'enzyme';
 import * as sinon from 'sinon';
 
-import { Inputs } from '../components/interfaces';
-import MultiFieldsInput from '../components/index';
+import { Input } from '../types';
+import MultiFieldsInput from '../';
 
 describe('MultiFieldsInput', () => {
   const inputs: Inputs[] = [
@@ -51,7 +51,7 @@ describe('MultiFieldsInput', () => {
         onChange={spyChange}
       />
     );
-    const instance = component.instance() as MultiFieldsInput;
+    const instance = component.instance();
 
     component
       .find('input[name="sortCode0"]')
@@ -61,6 +61,7 @@ describe('MultiFieldsInput', () => {
     component.update();
 
     expect(component.find('input[name="sortCode0"]').prop('value')).toBe('10');
+    // @ts-ignore
     expect(instance.getValue()).toBe('102122');
   });
 

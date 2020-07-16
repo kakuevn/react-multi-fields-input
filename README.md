@@ -4,11 +4,11 @@ React Multi Fields Input component comes with zero styles to allow you style it 
 
 Example:
 
-![react-multi-fields-input component no styles](https://github.com/kakuevn/react-multi-fields-input/raw/master/assets/rmfi-example-base.png)
+![react-multi-fields-input component no styles](https://github.com/snikidev/react-multi-fields-input/raw/master/assets/rmfi-example-base.png)
 
 Example with styles:
 
-![react-multi-fields-input component](https://github.com/kakuevn/react-multi-fields-input/raw/master/assets/rmfi-example.png)
+![react-multi-fields-input component](https://github.com/snikidev/react-multi-fields-input/raw/master/assets/rmfi-example.png)
 
 
 
@@ -42,35 +42,28 @@ const inputs = [
 />;
 ```
 
-See more live examples on the [website](https://react-multi-fields-input.netlify.com/).
+See more live examples on the [website](https://react-multi-fields-input.sniki.dev/).
 
 ## Props
 
-MultiFieldsInput component accepts the following props:
+| prop        | required    | type              | default        |
+|-------------|:-----------:|:-----------------:|----------------|
+| inputs      | yes         | `Input[]`         |                |
+| name        | yes         | `string`          |                |
+| onBlur      | yes         | `function`        |                |
+| onChange    | no          | `function`        | `undefined`    |
+| isValid     | no          | `function`        | `true`         |
+| value       | no          | `string`          | ` '' `         |
+| autoFocus   | no          | `function`        | `true`         |
 
-```js static
-{
-  inputs: Inputs[];
-  name: string;
-  onBlur(target: Target): void;
-  onChange(target: Target): void;
-  isValid?: boolean;
-  value?: string;
-  autoFocus?: boolean;
-}
-```
 
-`inputs` is an array of objects that are constructed of
+`Input[]` is an array of objects with following properties
 
-```js static
-{
-  type: 'number' | 'text';
-  maxLength: number;
-  placeholder: string;
-  min?: number;
-  max?: number;
-}
-```
+| prop        | required    | type                 | default        |
+|-------------|:-----------:|:--------------------:|----------------|
+| maxLength   | yes         | `number`             |                |
+| placeholder | no          | `string`             | ` '' `         |
+
 
 The object that is being returned `onBlur` and `onChange`:
 
@@ -85,10 +78,12 @@ yarn
 yarn start
 ```
 
-Optional: To enable styles in styleguidist, uncomment `.scss` styles import on line 5 in `src/components/index.tsx`.
+Storybook starts on `localhost:3001`.
 
-When done
+## Build
 
 ```
 yarn build
 ```
+
+Build script builds component only. Storybook is built with `storybook:build` by [Netlify](https://www.netlify.com/)
