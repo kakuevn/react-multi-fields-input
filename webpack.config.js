@@ -5,10 +5,10 @@ const lintFormatter = require('eslint-formatter-friendly')
 module.exports = {
   entry: path.resolve(__dirname, 'src/components/index.tsx'),
   output: {
+    globalObject: 'this',
     filename: 'index.js',
     path: path.resolve(__dirname, 'dist'),
     publicPath: '/dist',
-    library: '',
     libraryTarget: 'commonjs2',
   },
 

@@ -82,6 +82,7 @@ const MultiFieldsInput: FunctionComponent<Props> = ({
         {inputs.map((field, index) => {
           return (
             <input
+              {...field}
               key={`${name}-${index}`}
               name={`${name}${index}`}
               data-testid={`${name}${index}`}
@@ -90,7 +91,6 @@ const MultiFieldsInput: FunctionComponent<Props> = ({
               onBlur={handleBlur}
               onChange={handleChange}
               type="text"
-              {...field}
             />
           )
         })}

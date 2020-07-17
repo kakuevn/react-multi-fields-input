@@ -10,23 +10,20 @@ React Multi Fields Input component comes with zero styles to allow you style it 
   name="codeSort"
   inputs={[
     {
-      type: 'number',
       maxLength: 2,
       placeholder: '00',
     },
     {
-      type: 'number',
       maxLength: 2,
       placeholder: '00',
     },
     {
-      type: 'number',
       maxLength: 2,
       placeholder: '00',
     },
   ]}
   value="202020"
-  isValid={false}
+  error={`Invalid input`}
   onBlur={() => {}}
   onChange={() => {}}
 />
@@ -41,11 +38,11 @@ See more live examples on the [website](https://react-multi-fields-input.sniki.d
 | inputs    |   yes    | `Input[]`  |             |
 | name      |   yes    |  `string`  |             |
 | onBlur    |   yes    | `function` |             |
-| onChange  |    no    | `function` | `undefined` |
-| isValid   |    no    | `function` | `true`      |
-| value     |    no    |  `string`  | `''`        |
-| autoFocus |    no    | `boolean`  | `true`      |
-| styles    |    no    |  `object`  | `{}`        |
+| onChange  |   no     | `function` | `undefined` |
+| error     |   no     | `string`   | ` '' `      |
+| value     |   no     |  `string`  | ` '' `      |
+| autoFocus |   no     | `boolean`  | `true`      |
+| styles    |   no     |  `object`  | `{}`        |
 
 `Input[]` is an array of objects with following properties
 
