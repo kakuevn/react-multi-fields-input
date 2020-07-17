@@ -22,7 +22,7 @@ jobs:
             - run: yarn
             - run: yarn test
             - codecov/upload:
-                file: .codecov/coverage.json
+                file: coverage/coverage-final.json
 workflows:
     tests:
       jobs:

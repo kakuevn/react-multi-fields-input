@@ -9,4 +9,5 @@ module.exports = {
   },
   modulePathIgnorePatterns: ['<rootDir>/dist/'],
   setupFilesAfterEnv: ['./setupTests.ts'],
+  collectCoverage: true,
 }
