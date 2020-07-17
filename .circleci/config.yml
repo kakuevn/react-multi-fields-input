@@ -1,7 +1,18 @@
 version: 2.1
 orbs:
+coveralls: coveralls/coveralls@1.0.5
   node: circleci/node@1.1.6
 jobs:
+  coveralls:
+    docker:
+      - image: 'circleci/node:10.0.0'
+    steps:
+      - checkout
+      - run:
+          name: Install and Make
+          command: yarn && make test-coverage
+      - coveralls/upload
+          parallel: true
   unit-tests:
     executor:
       name: node/default
@@ -15,3 +26,4 @@ workflows:
     tests:
       jobs:
         - unit-tests
+        - coveralls
