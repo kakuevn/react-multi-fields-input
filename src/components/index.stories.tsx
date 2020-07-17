@@ -91,7 +91,7 @@ export const WithStyle = () => (
       value="202020"
       onBlur={data => console.log(data)}
       onChange={data => console.log(data)}
-      error="Input is invalid. Please, enter the valid numbers."
+      error="Input is invalid. Please, enter a valid number."
       styles={{
         container: {
           width: 'auto',
