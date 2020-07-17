@@ -30,13 +30,13 @@ const MultiFieldsInput: FunctionComponent<Props> = ({
 
   const handleBlur = (e: SyntheticEvent) => {
     const { name: fieldName, value } = e.target as HTMLInputElement
-    const updatedState = {
-      ...fieldsValues,
-      [fieldName]: value,
-    }
-    setFieldsValues(updatedState)
-    const finalValue = getValue(updatedState as any)
-    onBlur({ name, value: finalValue })
+    onBlur({
+      name,
+      value: getValue({
+        ...fieldsValues,
+        [fieldName]: value,
+      } as any),
+    })
   }
 
   const handleChange = (e: SyntheticEvent) => {
@@ -64,7 +64,6 @@ const MultiFieldsInput: FunctionComponent<Props> = ({
   useEffect(() => {
     if (onChange) {
       const value = getValue(fieldsValues as any)
-      console.log(value)
       onChange({
         name,
         value,

@@ -25,7 +25,6 @@ export const NumberFields = () => (
     inputs={inputs}
     value="202020"
     onBlur={data => console.log(data)}
-    onChange={data => console.log(data)}
   />
 )
 
