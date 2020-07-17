@@ -29,7 +29,6 @@
     "start": "npm-run-all --parallel dev storybook"
   },
   "dependencies": {
-    "classnames": "^2.2.6",
     "cross-env": "^7.0.2",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",

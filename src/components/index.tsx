@@ -4,7 +4,6 @@ import React, {
   useEffect,
   SyntheticEvent,
 } from 'react'
-import cn from 'classnames'
 import { Props } from '../types'
 import { formatFields, getValue } from '../utils'
 
@@ -17,6 +16,13 @@ const MultiFieldsInput: FunctionComponent<Props> = ({
   onBlur,
   onChange,
   value = '',
+  styles = {
+    container: {},
+    label: {},
+    input: {},
+    error: {},
+    inputContainer: {},
+  },
 }: Props) => {
   const [fieldsValues, setFieldsValues] = useState(
     formatFields(value, name, inputs)
@@ -67,33 +73,30 @@ const MultiFieldsInput: FunctionComponent<Props> = ({
   }, [fieldsValues])
 
   return (
-    <div className="rmfi-container">
+    <div style={styles.container}>
       {label && (
-        <label htmlFor={name} className="rmfi-label">
+        <label htmlFor={name} style={styles.label}>
           {label}
         </label>
       )}
-      {inputs.map((field, index) => {
-        return (
-          <input
-            key={`${name}-${index}`}
-            name={`${name}${index}`}
-            data-testid={`${name}${index}`}
-            value={fieldsValues[`${name}${index}`] as string}
-            className={cn([
-              `rmfi-input rmfi-input-${index}`,
-              {
-                'rmfi-error': error !== '',
-              },
-            ])}
-            onBlur={handleBlur}
-            onChange={handleChange}
-            type="text"
-            {...field}
-          />
-        )
-      })}
-      {error !== '' && <div className="rmfi-error-message">{error}</div>}
+      <div style={styles.inputContainer}>
+        {inputs.map((field, index) => {
+          return (
+            <input
+              key={`${name}-${index}`}
+              name={`${name}${index}`}
+              data-testid={`${name}${index}`}
+              value={fieldsValues[`${name}${index}`] as string}
+              style={styles.input}
+              onBlur={handleBlur}
+              onChange={handleChange}
+              type="text"
+              {...field}
+            />
+          )
+        })}
+      </div>
+      {error !== '' && <div style={styles.error}>{error}</div>}
     </div>
   )
 }

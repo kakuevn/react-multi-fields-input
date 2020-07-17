@@ -1,41 +1,37 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`MultiFieldsInput Renders correctly 1`] = `
-<div
-  class="rmfi-container"
->
+<div>
   <label
-    class="rmfi-label"
     for="sortCode"
   >
     Sort Code
   </label>
-  <input
-    class="rmfi-input rmfi-input-0"
-    data-testid="sortCode0"
-    maxlength="2"
-    name="sortCode0"
-    placeholder="00"
-    type="text"
-    value="20"
-  />
-  <input
-    class="rmfi-input rmfi-input-1"
-    data-testid="sortCode1"
-    maxlength="2"
-    name="sortCode1"
-    placeholder="00"
-    type="text"
-    value="20"
-  />
-  <input
-    class="rmfi-input rmfi-input-2"
-    data-testid="sortCode2"
-    maxlength="2"
-    name="sortCode2"
-    placeholder="00"
-    type="text"
-    value="20"
-  />
+  <div>
+    <input
+      data-testid="sortCode0"
+      maxlength="2"
+      name="sortCode0"
+      placeholder="00"
+      type="text"
+      value="20"
+    />
+    <input
+      data-testid="sortCode1"
+      maxlength="2"
+      name="sortCode1"
+      placeholder="00"
+      type="text"
+      value="20"
+    />
+    <input
+      data-testid="sortCode2"
+      maxlength="2"
+      name="sortCode2"
+      placeholder="00"
+      type="text"
+      value="20"
+    />
+  </div>
 </div>
 `;

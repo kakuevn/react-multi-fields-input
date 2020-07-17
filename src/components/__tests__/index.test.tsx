@@ -70,4 +70,30 @@ describe('MultiFieldsInput', () => {
     )
     expect(getByText(/Invalid input/i)).toBeInTheDocument()
   })
+
+  it('Displays passed styling', () => {
+    const styles = {
+      label: {
+        display: 'block',
+      },
+      input: {
+        color: '#2D3748',
+      },
+      error: {
+        fontSize: '13px',
+      },
+    }
+
+    const { getByTestId, getByText } = render(
+      <MultiFieldsInput
+        {...defaultProps}
+        error={'Invalid input'}
+        styles={styles}
+      />
+    )
+
+    expect(getByText(/sort code/i)).toHaveStyle(styles.label)
+    expect(getByTestId(/sortCode0/i)).toHaveStyle(styles.input)
+    expect(getByText(/Invalid input/i)).toHaveStyle(styles.error)
+  })
 })
