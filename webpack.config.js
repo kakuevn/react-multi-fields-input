@@ -9,7 +9,7 @@ module.exports = {
     filename: 'index.js',
     path: path.resolve(__dirname, 'dist'),
     publicPath: '/dist',
-    libraryTarget: 'commonjs2',
+    libraryTarget: 'umd',
   },
 
   devtool: 'cheap-source-map',
