@@ -115,4 +115,4 @@ Storybook starts on `localhost:3001`.
 yarn build
 ```
 
-Build script builds component only. Storybook is built with `storybook:build` by [Netlify](https://www.netlify.com/)
+Build script builds component only. Storybook is built with `storybook:build` by [Netlify](https://www.netlify.com/).
