@@ -11,8 +11,7 @@ jobs:
       - run:
           name: Install and Make
           command: yarn && make test-coverage
-      - coveralls/upload:
-          parallel: true
+      - coveralls/upload
   unit-tests:
     executor:
       name: node/default
