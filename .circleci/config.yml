@@ -5,7 +5,7 @@ orbs:
 jobs:
   coveralls:
     docker:
-      - image: 'circleci/node:10.0.0'
+      - image: 'circleci/node:12.18.0'
     steps:
       - checkout
       - run:
