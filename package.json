@@ -1,6 +1,6 @@
 {
   "name": "react-multi-fields-input",
-  "version": "1.0.3-beta",
+  "version": "1.0.0",
   "main": "dist/index.js",
   "types": "dist/components/index.d.ts",
   "author": "snikidev <n.kakuev@gmail.com>",
