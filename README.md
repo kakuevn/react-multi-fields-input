@@ -1,6 +1,6 @@
 # React Multi Fields Input component
 
-[![codecov](https://codecov.io/gh/snikidev/react-multi-fields-input/branch/master/graph/badge.svg)](https://codecov.io/gh/snikidev/react-multi-fields-input) ![npm](https://img.shields.io/npm/v/react-multi-fields-input) [![CircleCI](https://circleci.com/gh/circleci/circleci-docs/tree/teesloane-patch-5.svg?style=svg)](https://circleci.com/gh/snikidev/react-multi-fields-input/tree/master)
+[![codecov](https://codecov.io/gh/snikidev/react-multi-fields-input/branch/master/graph/badge.svg)](https://codecov.io/gh/snikidev/react-multi-fields-input) ![npm](https://img.shields.io/npm/v/react-multi-fields-input) [![CircleCI](https://circleci.com/gh/snikidev/react-multi-fields-input/tree/master.svg?style=svg)](https://circleci.com/gh/snikidev/react-multi-fields-input/tree/master)
 
 React Multi Fields Input component comes with zero styles to allow you style it in accordance to your style guidelines.
 
